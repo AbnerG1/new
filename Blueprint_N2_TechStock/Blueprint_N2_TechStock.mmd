@@ -1,0 +1,31 @@
+flowchart TB
+  subgraph EVID["Evidências físicas"]
+    E1["Portal de acesso: página de login"]
+    E2["Banco de componentes: lista e pesquisa"]
+    E3["Terminal: comandos cURL e resposta HTTP"]
+  end
+  subgraph USER["Ações do usuário"]
+    U1["Acessar Portal e informar credenciais"]
+    U2["Abrir Banco e consultar/pesquisar componentes"]
+    U3["Executar CREATE, UPDATE e DELETE via cURL"]
+  end
+  subgraph FRONT["Frontstage — interações visíveis"]
+    F1["Tela de autenticação: acesso ou mensagem de erro"]
+    F2["Tela Banco (READ): exibe registros cadastrados"]
+    F3["API: recebe cURL e retorna status/mensagem HTTP"]
+  end
+  subgraph BACK["Backstage — processos internos"]
+    B1["Autenticar User_account e criar/validar sessão"]
+    B2["Proteger rota do Banco e solicitar registros"]
+    B3["Validar dados e executar operações CRUD"]
+  end
+  subgraph SUPPORT["Processos de suporte"]
+    S1["User_account / UserRecord / GerenciadorSessoes"]
+    S2["Bottle / rotas / Controllers / Models / Views"]
+    S3["ComponentRecord / DataRecord / arquivos JSON"]
+  end
+  U1 --> F1 --> B1 --> S1
+  U2 --> F2 --> B2 --> S2
+  U3 --> F3 --> B3 --> S3
+  B1 --> B2
+  B2 --> B3

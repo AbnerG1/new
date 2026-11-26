@@ -1,0 +1,24 @@
+# Blueprint Nível 2 — TechStock
+
+Esta pasta contém uma versão independente do mapa de serviço para o Nível 2.
+
+## Arquivos
+- `Blueprint_N2_TechStock.png`: imagem pronta para inserir na apresentação/vídeo.
+- `Blueprint_N2_TechStock.svg`: versão vetorial, pode ser aberta em navegador ou editor vetorial.
+- `Blueprint_N2_TechStock.mmd`: versão Mermaid editável.
+
+## Organização do mapa
+O mapa foi organizado como um Service Blueprint com cinco faixas:
+1. Evidências físicas;
+2. Ações do usuário;
+3. Frontstage (interações visíveis);
+4. Backstage (processos internos);
+5. Processos de suporte.
+
+## Relação com os requisitos da atividade
+- Portal: usuário informa credenciais.
+- Banco: usuário autenticado consulta a lista de componentes (READ).
+- CRUD via cURL: CREATE, UPDATE e DELETE são enviados pelo terminal.
+- Suporte: autenticação/sessão, rotas e controllers, models e persistência em arquivos JSON.
+
+**Atenção:** o mapa representa a arquitetura e o fluxo descritos para o TechStock. Antes de gravar a apresentação final, confira se os nomes das classes/rotas coincidem com a versão atual do seu código.
